@@ -141,6 +141,47 @@ Installed kernelspec python3 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.
 
 
 
+Requirement already satisfied: wcwidth in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from prompt-toolkit<2.0.0,>=1.0.4->ipython>=4.0.0->ipykernel)
+Requirement already satisfied: ptyprocess>=0.5 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from pexpect; sys_platform != "win32"->ipython>=4.0.0->ipykernel)
+
+
+python -m  ipykernel install --prefix /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages
+python -m ipykernel install -- user --name gisenv --display-name "GISENV - Py3.4"
+
+
+### Source --- https://github.com/jupyter/notebook/issues/1524
+
+$ /path/to/python -m  ipykernel install --help
+usage: ipython-kernel-install [-h] [--user] [--name NAME]
+                              [--display-name DISPLAY_NAME]
+                              [--profile PROFILE] [--prefix PREFIX]
+                              [--sys-prefix]
+
+Install the IPython kernel spec.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --user                Install for the current user instead of system-wide
+  --name NAME           Specify a name for the kernelspec. This is needed to
+                        have multiple IPython kernels at the same time.
+  --display-name DISPLAY_NAME
+                        Specify the display name for the kernelspec. This is
+                        helpful when you have multiple IPython kernels.
+  --profile PROFILE     Specify an IPython profile to load. This can be used
+                        to create custom versions of the kernel.
+  --prefix PREFIX       Specify an install prefix for the kernelspec. This is
+                        needed to install into a non-default location, such as
+                        a conda/virtual-env.
+  --sys-prefix          Install to Python's sys.prefix. Shorthand for
+                        --prefix='/Users/bussonniermatthias/anaconda'. For use
+                        in conda/virtual-envs.
+
+
+
+
+
+
+
 
 
 ## Error -1 
