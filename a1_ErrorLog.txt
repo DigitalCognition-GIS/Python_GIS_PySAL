@@ -1,0 +1,1117 @@
+## Initial Hiccups with installations 
+## https://github.com/pandas-dev/pandas/issues/3785
+
+
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-1-78e95335453d> in <module>()
+----> 1 import pysal
+      2 import geopandas
+      3 import fiona
+
+ImportError: No module named pysal
+
+[I 23:40:59.723 NotebookApp] Kernel shutdown: 4d8095a8-9aac-4587-9de3-7bbc7339f589
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ python
+Python 3.4.5 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:47:47) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> import pysal
+>>> 
+>>> import geopandas
+Traceback (most recent call last):
+  File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/pandas/__init__.py", line 26, in <module>
+    from pandas._libs import (hashtable as _hashtable,
+  File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/pandas/_libs/__init__.py", line 4, in <module>
+    from .tslib import iNaT, NaT, Timestamp, Timedelta, OutOfBoundsDatetime
+ImportError: No module named 'pandas._libs.tslib'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/geopandas/__init__.py", line 1, in <module>
+    from geopandas.geoseries import GeoSeries
+  File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/geopandas/geoseries.py", line 5, in <module>
+    from pandas import Series
+  File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/pandas/__init__.py", line 35, in <module>
+    "the C extensions first.".format(module))
+ImportError: C extension: No module named 'pandas._libs.tslib' not built. If you want to import pandas from the source directory, you may need to run 'python setup.py build_ext --inplace --force' to build the C extensions first.
+>>> 
+>>> 
+
+
+
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ [0301/235003.868971:ERROR:desktop_window_tree_host_x11.cc(1127)] Not implemented reached in virtual void views::DesktopWindowTreeHostX11::InitModalType(ui::ModalType)
+^C
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ ./j_l.sh
+[I 23:50:35.715 NotebookApp] [nb_conda_kernels] enabled, 4 kernels found
+[I 23:50:38.835 NotebookApp] sparkmagic extension enabled!
+[I 23:50:38.861 NotebookApp] Serving notebooks from local directory: /home/dhankar/Desktop/Geo_1
+[I 23:50:38.861 NotebookApp] 0 active kernels 
+[I 23:50:38.861 NotebookApp] The Jupyter Notebook is running at: http://localhost:8888/
+[I 23:50:38.861 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 23:50:46.033 NotebookApp] Creating new file in 
+[I 23:51:05.850 NotebookApp] Saving file at /testing.py
+[I 23:51:07.064 NotebookApp] Saving file at /testing.py
+^C[I 23:51:14.505 NotebookApp] interrupted
+Serving notebooks from local directory: /home/dhankar/Desktop/Geo_1
+0 active kernels 
+The Jupyter Notebook is running at: http://localhost:8888/
+Shutdown this notebook server (y/[n])? y
+[C 23:51:16.154 NotebookApp] Shutdown confirmed
+[I 23:51:16.155 NotebookApp] Shutting down kernels
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ python testing.py 
+Traceback (most recent call last):
+  File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/pandas/__init__.py", line 26, in <module>
+    from pandas._libs import (hashtable as _hashtable,
+  File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/pandas/_libs/__init__.py", line 4, in <module>
+    from .tslib import iNaT, NaT, Timestamp, Timedelta, OutOfBoundsDatetime
+ImportError: No module named 'pandas._libs.tslib'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "testing.py", line 1, in <module>
+    import pandas as pd
+  File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/pandas/__init__.py", line 35, in <module>
+    "the C extensions first.".format(module))
+ImportError: C extension: No module named 'pandas._libs.tslib' not built. If you want to import pandas from the source directory, you may need to run 'python setup.py build_ext --inplace --force' to build the C extensions first.
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ pip install pandas
+Requirement already satisfied: pandas in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages
+Requirement already satisfied: python-dateutil>=2 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from pandas)
+Requirement already satisfied: numpy>=1.9.0 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from pandas)
+Requirement already satisfied: pytz>=2011k in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from pandas)
+Requirement already satisfied: six>=1.5 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from python-dateutil>=2->pandas)
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ pip install --upgrade pandas
+Collecting pandas
+  Using cached pandas-0.22.0.tar.gz
+Requirement already up-to-date: python-dateutil>=2 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from pandas)
+Requirement already up-to-date: pytz>=2011k in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from pandas)
+Requirement already up-to-date: numpy>=1.9.0 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from pandas)
+Requirement already up-to-date: six>=1.5 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from python-dateutil>=2->pandas)
+Building wheels for collected packages: pandas
+  Running setup.py bdist_wheel for pandas ... \^error
+  Failed building wheel for pandas
+  Running setup.py clean for pandas
+Failed to build pandas
+Installing collected packages: pandas
+  Found existing installation: pandas 0.21.0
+    Uninstalling pandas-0.21.0:
+      Successfully uninstalled pandas-0.21.0
+  Running setup.py install for pandas ... error
+    Complete output from command /home/dhankar/anaconda2/envs/gisenv/bin/python -u -c "import setuptools, tokenize;__file__='/tmp/pip-build-lcseqgfy/pandas/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record /tmp/pip-fhsd4jo5-record/install-record.txt --single-version-externally-managed --compile:
+    running install
+    running build
+    running build_py
+    creating build
+    creating build/lib.linux-x86_64-3.4
+    creating build/lib.linux-x86_64-3.4/pandas
+    copying pandas/__init__.py -> build/lib.linux-x86_64-3.4/pandas
+    copying pandas/conftest.py -> build/lib.linux-x86_64-3.4/pandas
+    copying pandas/testing.py -> build/lib.linux-x86_64-3.4/pandas
+    copying pandas/lib.py -> build/lib.linux-x86_64-3.4/pandas
+    copying pandas/_version.py -> build/lib.linux-x86_64-3.4/pandas
+    copying pandas/json.py -> build/lib.linux-x86_64-3.4/pandas
+    copying pandas/tslib.py -> build/lib.linux-x86_64-3.4/pandas
+    copying pandas/parser.py -> build/lib.linux-x86_64-3.4/pandas
+    creating build/lib.linux-x86_64-3.4/pandas/api
+    copying pandas/api/__init__.py -> build/lib.linux-x86_64-3.4/pandas/api
+    creating build/lib.linux-x86_64-3.4/pandas/api/types
+    copying pandas/api/types/__init__.py -> build/lib.linux-x86_64-3.4/pandas/api/types
+    creating build/lib.linux-x86_64-3.4/pandas/compat
+    copying pandas/compat/__init__.py -> build/lib.linux-x86_64-3.4/pandas/compat
+    copying pandas/compat/pickle_compat.py -> build/lib.linux-x86_64-3.4/pandas/compat
+    copying pandas/compat/chainmap_impl.py -> build/lib.linux-x86_64-3.4/pandas/compat
+    copying pandas/compat/openpyxl_compat.py -> build/lib.linux-x86_64-3.4/pandas/compat
+    copying pandas/compat/chainmap.py -> build/lib.linux-x86_64-3.4/pandas/compat
+    creating build/lib.linux-x86_64-3.4/pandas/compat/numpy
+    copying pandas/compat/numpy/__init__.py -> build/lib.linux-x86_64-3.4/pandas/compat/numpy
+    copying pandas/compat/numpy/function.py -> build/lib.linux-x86_64-3.4/pandas/compat/numpy
+    creating build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/__init__.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/panel4d.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/categorical.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/window.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/series.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/generic.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/datetools.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/sorting.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/nanops.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/frame.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/indexing.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/base.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/missing.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/internals.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/algorithms.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/accessor.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/resample.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/ops.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/config.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/index.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/strings.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/panelnd.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/panel.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/config_init.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/groupby.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/api.py -> build/lib.linux-x86_64-3.4/pandas/core
+    copying pandas/core/common.py -> build/lib.linux-x86_64-3.4/pandas/core
+    creating build/lib.linux-x86_64-3.4/pandas/core/dtypes
+    copying pandas/core/dtypes/__init__.py -> build/lib.linux-x86_64-3.4/pandas/core/dtypes
+    copying pandas/core/dtypes/inference.py -> build/lib.linux-x86_64-3.4/pandas/core/dtypes
+    copying pandas/core/dtypes/generic.py -> build/lib.linux-x86_64-3.4/pandas/core/dtypes
+    copying pandas/core/dtypes/dtypes.py -> build/lib.linux-x86_64-3.4/pandas/core/dtypes
+    copying pandas/core/dtypes/cast.py -> build/lib.linux-x86_64-3.4/pandas/core/dtypes
+    copying pandas/core/dtypes/missing.py -> build/lib.linux-x86_64-3.4/pandas/core/dtypes
+    copying pandas/core/dtypes/concat.py -> build/lib.linux-x86_64-3.4/pandas/core/dtypes
+    copying pandas/core/dtypes/api.py -> build/lib.linux-x86_64-3.4/pandas/core/dtypes
+    copying pandas/core/dtypes/common.py -> build/lib.linux-x86_64-3.4/pandas/core/dtypes
+    creating build/lib.linux-x86_64-3.4/pandas/core/indexes
+    copying pandas/core/indexes/__init__.py -> build/lib.linux-x86_64-3.4/pandas/core/indexes
+    copying pandas/core/indexes/numeric.py -> build/lib.linux-x86_64-3.4/pandas/core/indexes
+    copying pandas/core/indexes/multi.py -> build/lib.linux-x86_64-3.4/pandas/core/indexes
+    copying pandas/core/indexes/datetimes.py -> build/lib.linux-x86_64-3.4/pandas/core/indexes
+    copying pandas/core/indexes/accessors.py -> build/lib.linux-x86_64-3.4/pandas/core/indexes
+    copying pandas/core/indexes/datetimelike.py -> build/lib.linux-x86_64-3.4/pandas/core/indexes
+    copying pandas/core/indexes/period.py -> build/lib.linux-x86_64-3.4/pandas/core/indexes
+    copying pandas/core/indexes/base.py -> build/lib.linux-x86_64-3.4/pandas/core/indexes
+    copying pandas/core/indexes/category.py -> build/lib.linux-x86_64-3.4/pandas/core/indexes
+    copying pandas/core/indexes/frozen.py -> build/lib.linux-x86_64-3.4/pandas/core/indexes
+    copying pandas/core/indexes/timedeltas.py -> build/lib.linux-x86_64-3.4/pandas/core/indexes
+    copying pandas/core/indexes/interval.py -> build/lib.linux-x86_64-3.4/pandas/core/indexes
+    copying pandas/core/indexes/range.py -> build/lib.linux-x86_64-3.4/pandas/core/indexes
+    copying pandas/core/indexes/api.py -> build/lib.linux-x86_64-3.4/pandas/core/indexes
+    creating build/lib.linux-x86_64-3.4/pandas/core/computation
+    copying pandas/core/computation/align.py -> build/lib.linux-x86_64-3.4/pandas/core/computation
+    copying pandas/core/computation/__init__.py -> build/lib.linux-x86_64-3.4/pandas/core/computation
+    copying pandas/core/computation/eval.py -> build/lib.linux-x86_64-3.4/pandas/core/computation
+    copying pandas/core/computation/scope.py -> build/lib.linux-x86_64-3.4/pandas/core/computation
+    copying pandas/core/computation/pytables.py -> build/lib.linux-x86_64-3.4/pandas/core/computation
+    copying pandas/core/computation/expr.py -> build/lib.linux-x86_64-3.4/pandas/core/computation
+    copying pandas/core/computation/check.py -> build/lib.linux-x86_64-3.4/pandas/core/computation
+    copying pandas/core/computation/ops.py -> build/lib.linux-x86_64-3.4/pandas/core/computation
+    copying pandas/core/computation/expressions.py -> build/lib.linux-x86_64-3.4/pandas/core/computation
+    copying pandas/core/computation/engines.py -> build/lib.linux-x86_64-3.4/pandas/core/computation
+    copying pandas/core/computation/api.py -> build/lib.linux-x86_64-3.4/pandas/core/computation
+    copying pandas/core/computation/common.py -> build/lib.linux-x86_64-3.4/pandas/core/computation
+    creating build/lib.linux-x86_64-3.4/pandas/core/reshape
+    copying pandas/core/reshape/__init__.py -> build/lib.linux-x86_64-3.4/pandas/core/reshape
+    copying pandas/core/reshape/tile.py -> build/lib.linux-x86_64-3.4/pandas/core/reshape
+    copying pandas/core/reshape/reshape.py -> build/lib.linux-x86_64-3.4/pandas/core/reshape
+    copying pandas/core/reshape/concat.py -> build/lib.linux-x86_64-3.4/pandas/core/reshape
+    copying pandas/core/reshape/util.py -> build/lib.linux-x86_64-3.4/pandas/core/reshape
+    copying pandas/core/reshape/pivot.py -> build/lib.linux-x86_64-3.4/pandas/core/reshape
+    copying pandas/core/reshape/api.py -> build/lib.linux-x86_64-3.4/pandas/core/reshape
+    copying pandas/core/reshape/merge.py -> build/lib.linux-x86_64-3.4/pandas/core/reshape
+    creating build/lib.linux-x86_64-3.4/pandas/core/sparse
+    copying pandas/core/sparse/__init__.py -> build/lib.linux-x86_64-3.4/pandas/core/sparse
+    copying pandas/core/sparse/series.py -> build/lib.linux-x86_64-3.4/pandas/core/sparse
+    copying pandas/core/sparse/frame.py -> build/lib.linux-x86_64-3.4/pandas/core/sparse
+    copying pandas/core/sparse/array.py -> build/lib.linux-x86_64-3.4/pandas/core/sparse
+    copying pandas/core/sparse/scipy_sparse.py -> build/lib.linux-x86_64-3.4/pandas/core/sparse
+    copying pandas/core/sparse/list.py -> build/lib.linux-x86_64-3.4/pandas/core/sparse
+    copying pandas/core/sparse/api.py -> build/lib.linux-x86_64-3.4/pandas/core/sparse
+    creating build/lib.linux-x86_64-3.4/pandas/core/tools
+    copying pandas/core/tools/__init__.py -> build/lib.linux-x86_64-3.4/pandas/core/tools
+    copying pandas/core/tools/numeric.py -> build/lib.linux-x86_64-3.4/pandas/core/tools
+    copying pandas/core/tools/datetimes.py -> build/lib.linux-x86_64-3.4/pandas/core/tools
+    copying pandas/core/tools/timedeltas.py -> build/lib.linux-x86_64-3.4/pandas/core/tools
+    creating build/lib.linux-x86_64-3.4/pandas/core/util
+    copying pandas/core/util/__init__.py -> build/lib.linux-x86_64-3.4/pandas/core/util
+    copying pandas/core/util/hashing.py -> build/lib.linux-x86_64-3.4/pandas/core/util
+    creating build/lib.linux-x86_64-3.4/pandas/computation
+    copying pandas/computation/__init__.py -> build/lib.linux-x86_64-3.4/pandas/computation
+    copying pandas/computation/expressions.py -> build/lib.linux-x86_64-3.4/pandas/computation
+    creating build/lib.linux-x86_64-3.4/pandas/errors
+    copying pandas/errors/__init__.py -> build/lib.linux-x86_64-3.4/pandas/errors
+    creating build/lib.linux-x86_64-3.4/pandas/formats
+    copying pandas/formats/style.py -> build/lib.linux-x86_64-3.4/pandas/formats
+    copying pandas/formats/__init__.py -> build/lib.linux-x86_64-3.4/pandas/formats
+    creating build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/__init__.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/clipboards.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/parquet.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/packers.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/s3.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/data.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/parsers.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/wb.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/html.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/pytables.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/gbq.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/excel.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/sql.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/stata.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/pickle.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/date_converters.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/feather_format.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/api.py -> build/lib.linux-x86_64-3.4/pandas/io
+    copying pandas/io/common.py -> build/lib.linux-x86_64-3.4/pandas/io
+    creating build/lib.linux-x86_64-3.4/pandas/io/json
+    copying pandas/io/json/table_schema.py -> build/lib.linux-x86_64-3.4/pandas/io/json
+    copying pandas/io/json/__init__.py -> build/lib.linux-x86_64-3.4/pandas/io/json
+    copying pandas/io/json/normalize.py -> build/lib.linux-x86_64-3.4/pandas/io/json
+    copying pandas/io/json/json.py -> build/lib.linux-x86_64-3.4/pandas/io/json
+    creating build/lib.linux-x86_64-3.4/pandas/io/sas
+    copying pandas/io/sas/__init__.py -> build/lib.linux-x86_64-3.4/pandas/io/sas
+    copying pandas/io/sas/sas_xport.py -> build/lib.linux-x86_64-3.4/pandas/io/sas
+    copying pandas/io/sas/sas_constants.py -> build/lib.linux-x86_64-3.4/pandas/io/sas
+    copying pandas/io/sas/sasreader.py -> build/lib.linux-x86_64-3.4/pandas/io/sas
+    copying pandas/io/sas/sas7bdat.py -> build/lib.linux-x86_64-3.4/pandas/io/sas
+    creating build/lib.linux-x86_64-3.4/pandas/io/msgpack
+    copying pandas/io/msgpack/__init__.py -> build/lib.linux-x86_64-3.4/pandas/io/msgpack
+    copying pandas/io/msgpack/exceptions.py -> build/lib.linux-x86_64-3.4/pandas/io/msgpack
+    copying pandas/io/msgpack/_version.py -> build/lib.linux-x86_64-3.4/pandas/io/msgpack
+    creating build/lib.linux-x86_64-3.4/pandas/io/formats
+    copying pandas/io/formats/style.py -> build/lib.linux-x86_64-3.4/pandas/io/formats
+    copying pandas/io/formats/__init__.py -> build/lib.linux-x86_64-3.4/pandas/io/formats
+    copying pandas/io/formats/excel.py -> build/lib.linux-x86_64-3.4/pandas/io/formats
+    copying pandas/io/formats/printing.py -> build/lib.linux-x86_64-3.4/pandas/io/formats
+    copying pandas/io/formats/terminal.py -> build/lib.linux-x86_64-3.4/pandas/io/formats
+    copying pandas/io/formats/css.py -> build/lib.linux-x86_64-3.4/pandas/io/formats
+    copying pandas/io/formats/console.py -> build/lib.linux-x86_64-3.4/pandas/io/formats
+    copying pandas/io/formats/format.py -> build/lib.linux-x86_64-3.4/pandas/io/formats
+    copying pandas/io/formats/common.py -> build/lib.linux-x86_64-3.4/pandas/io/formats
+    creating build/lib.linux-x86_64-3.4/pandas/io/clipboard
+    copying pandas/io/clipboard/__init__.py -> build/lib.linux-x86_64-3.4/pandas/io/clipboard
+    copying pandas/io/clipboard/clipboards.py -> build/lib.linux-x86_64-3.4/pandas/io/clipboard
+    copying pandas/io/clipboard/exceptions.py -> build/lib.linux-x86_64-3.4/pandas/io/clipboard
+    copying pandas/io/clipboard/windows.py -> build/lib.linux-x86_64-3.4/pandas/io/clipboard
+    creating build/lib.linux-x86_64-3.4/pandas/_libs
+    copying pandas/_libs/__init__.py -> build/lib.linux-x86_64-3.4/pandas/_libs
+    creating build/lib.linux-x86_64-3.4/pandas/_libs/tslibs
+    copying pandas/_libs/tslibs/__init__.py -> build/lib.linux-x86_64-3.4/pandas/_libs/tslibs
+    creating build/lib.linux-x86_64-3.4/pandas/plotting
+    copying pandas/plotting/__init__.py -> build/lib.linux-x86_64-3.4/pandas/plotting
+    copying pandas/plotting/_converter.py -> build/lib.linux-x86_64-3.4/pandas/plotting
+    copying pandas/plotting/_timeseries.py -> build/lib.linux-x86_64-3.4/pandas/plotting
+    copying pandas/plotting/_misc.py -> build/lib.linux-x86_64-3.4/pandas/plotting
+    copying pandas/plotting/_tools.py -> build/lib.linux-x86_64-3.4/pandas/plotting
+    copying pandas/plotting/_style.py -> build/lib.linux-x86_64-3.4/pandas/plotting
+    copying pandas/plotting/_compat.py -> build/lib.linux-x86_64-3.4/pandas/plotting
+    copying pandas/plotting/_core.py -> build/lib.linux-x86_64-3.4/pandas/plotting
+    creating build/lib.linux-x86_64-3.4/pandas/stats
+    copying pandas/stats/__init__.py -> build/lib.linux-x86_64-3.4/pandas/stats
+    copying pandas/stats/moments.py -> build/lib.linux-x86_64-3.4/pandas/stats
+    copying pandas/stats/api.py -> build/lib.linux-x86_64-3.4/pandas/stats
+    creating build/lib.linux-x86_64-3.4/pandas/types
+    copying pandas/types/__init__.py -> build/lib.linux-x86_64-3.4/pandas/types
+    copying pandas/types/concat.py -> build/lib.linux-x86_64-3.4/pandas/types
+    copying pandas/types/common.py -> build/lib.linux-x86_64-3.4/pandas/types
+    creating build/lib.linux-x86_64-3.4/pandas/util
+    copying pandas/util/__init__.py -> build/lib.linux-x86_64-3.4/pandas/util
+    copying pandas/util/decorators.py -> build/lib.linux-x86_64-3.4/pandas/util
+    copying pandas/util/testing.py -> build/lib.linux-x86_64-3.4/pandas/util
+    copying pandas/util/_depr_module.py -> build/lib.linux-x86_64-3.4/pandas/util
+    copying pandas/util/_doctools.py -> build/lib.linux-x86_64-3.4/pandas/util
+    copying pandas/util/_decorators.py -> build/lib.linux-x86_64-3.4/pandas/util
+    copying pandas/util/_print_versions.py -> build/lib.linux-x86_64-3.4/pandas/util
+    copying pandas/util/_validators.py -> build/lib.linux-x86_64-3.4/pandas/util
+    copying pandas/util/hashing.py -> build/lib.linux-x86_64-3.4/pandas/util
+    copying pandas/util/_tester.py -> build/lib.linux-x86_64-3.4/pandas/util
+    creating build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_window.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_resample.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_compat.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_errors.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_strings.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_panel.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_config.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_base.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_sorting.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_multilevel.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_expressions.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_panel4d.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_downstream.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_panelnd.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_nanops.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_common.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_take.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_algos.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_join.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_lib.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    copying pandas/tests/test_categorical.py -> build/lib.linux-x86_64-3.4/pandas/tests
+    creating build/lib.linux-x86_64-3.4/pandas/tests/api
+    copying pandas/tests/api/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/api
+    copying pandas/tests/api/test_api.py -> build/lib.linux-x86_64-3.4/pandas/tests/api
+    copying pandas/tests/api/test_types.py -> build/lib.linux-x86_64-3.4/pandas/tests/api
+    creating build/lib.linux-x86_64-3.4/pandas/tests/dtypes
+    copying pandas/tests/dtypes/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/dtypes
+    copying pandas/tests/dtypes/test_generic.py -> build/lib.linux-x86_64-3.4/pandas/tests/dtypes
+    copying pandas/tests/dtypes/test_concat.py -> build/lib.linux-x86_64-3.4/pandas/tests/dtypes
+    copying pandas/tests/dtypes/test_missing.py -> build/lib.linux-x86_64-3.4/pandas/tests/dtypes
+    copying pandas/tests/dtypes/test_inference.py -> build/lib.linux-x86_64-3.4/pandas/tests/dtypes
+    copying pandas/tests/dtypes/test_cast.py -> build/lib.linux-x86_64-3.4/pandas/tests/dtypes
+    copying pandas/tests/dtypes/test_dtypes.py -> build/lib.linux-x86_64-3.4/pandas/tests/dtypes
+    copying pandas/tests/dtypes/test_common.py -> build/lib.linux-x86_64-3.4/pandas/tests/dtypes
+    copying pandas/tests/dtypes/test_io.py -> build/lib.linux-x86_64-3.4/pandas/tests/dtypes
+    creating build/lib.linux-x86_64-3.4/pandas/tests/computation
+    copying pandas/tests/computation/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/computation
+    copying pandas/tests/computation/test_compat.py -> build/lib.linux-x86_64-3.4/pandas/tests/computation
+    copying pandas/tests/computation/test_eval.py -> build/lib.linux-x86_64-3.4/pandas/tests/computation
+    creating build/lib.linux-x86_64-3.4/pandas/tests/sparse
+    copying pandas/tests/sparse/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/sparse
+    copying pandas/tests/sparse/test_series.py -> build/lib.linux-x86_64-3.4/pandas/tests/sparse
+    copying pandas/tests/sparse/test_groupby.py -> build/lib.linux-x86_64-3.4/pandas/tests/sparse
+    copying pandas/tests/sparse/test_combine_concat.py -> build/lib.linux-x86_64-3.4/pandas/tests/sparse
+    copying pandas/tests/sparse/test_format.py -> build/lib.linux-x86_64-3.4/pandas/tests/sparse
+    copying pandas/tests/sparse/test_libsparse.py -> build/lib.linux-x86_64-3.4/pandas/tests/sparse
+    copying pandas/tests/sparse/test_arithmetics.py -> build/lib.linux-x86_64-3.4/pandas/tests/sparse
+    copying pandas/tests/sparse/test_list.py -> build/lib.linux-x86_64-3.4/pandas/tests/sparse
+    copying pandas/tests/sparse/test_array.py -> build/lib.linux-x86_64-3.4/pandas/tests/sparse
+    copying pandas/tests/sparse/test_frame.py -> build/lib.linux-x86_64-3.4/pandas/tests/sparse
+    copying pandas/tests/sparse/test_pivot.py -> build/lib.linux-x86_64-3.4/pandas/tests/sparse
+    copying pandas/tests/sparse/test_reshape.py -> build/lib.linux-x86_64-3.4/pandas/tests/sparse
+    copying pandas/tests/sparse/test_indexing.py -> build/lib.linux-x86_64-3.4/pandas/tests/sparse
+    copying pandas/tests/sparse/common.py -> build/lib.linux-x86_64-3.4/pandas/tests/sparse
+    creating build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_axis_select_reindex.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_timeseries.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_nonunique_indexes.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_mutate_columns.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_asof.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_apply.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_missing.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_validate.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_combine_concat.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_quantile.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_dtypes.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_sorting.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_analytics.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_alter_axes.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_subclass.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_api.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_block_internals.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_query_eval.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_operators.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_convert_to.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_to_csv.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_join.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_reshape.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_replace.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_rank.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_constructors.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_repr_info.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_indexing.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/test_period.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    copying pandas/tests/frame/common.py -> build/lib.linux-x86_64-3.4/pandas/tests/frame
+    creating build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/test_timedelta.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/test_panel.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/test_ix.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/test_loc.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/test_iloc.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/test_interval.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/test_partial.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/test_datetime.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/test_multiindex.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/test_floats.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/test_chaining_and_caching.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/test_coercion.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/test_categorical.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/test_callable.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/test_scalar.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/test_indexing.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/test_indexing_slow.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    copying pandas/tests/indexing/common.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexing
+    creating build/lib.linux-x86_64-3.4/pandas/tests/indexes
+    copying pandas/tests/indexes/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes
+    copying pandas/tests/indexes/conftest.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes
+    copying pandas/tests/indexes/datetimelike.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes
+    copying pandas/tests/indexes/test_base.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes
+    copying pandas/tests/indexes/test_multi.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes
+    copying pandas/tests/indexes/test_interval.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes
+    copying pandas/tests/indexes/test_numeric.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes
+    copying pandas/tests/indexes/test_category.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes
+    copying pandas/tests/indexes/test_frozen.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes
+    copying pandas/tests/indexes/common.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes
+    copying pandas/tests/indexes/test_range.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes
+    creating build/lib.linux-x86_64-3.4/pandas/tests/indexes/datetimes
+    copying pandas/tests/indexes/datetimes/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/datetimes
+    copying pandas/tests/indexes/datetimes/test_misc.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/datetimes
+    copying pandas/tests/indexes/datetimes/test_date_range.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/datetimes
+    copying pandas/tests/indexes/datetimes/test_tools.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/datetimes
+    copying pandas/tests/indexes/datetimes/test_astype.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/datetimes
+    copying pandas/tests/indexes/datetimes/test_missing.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/datetimes
+    copying pandas/tests/indexes/datetimes/test_construction.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/datetimes
+    copying pandas/tests/indexes/datetimes/test_datetime.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/datetimes
+    copying pandas/tests/indexes/datetimes/test_partial_slicing.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/datetimes
+    copying pandas/tests/indexes/datetimes/test_setops.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/datetimes
+    copying pandas/tests/indexes/datetimes/test_formats.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/datetimes
+    copying pandas/tests/indexes/datetimes/test_datetimelike.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/datetimes
+    copying pandas/tests/indexes/datetimes/test_indexing.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/datetimes
+    copying pandas/tests/indexes/datetimes/test_ops.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/datetimes
+    creating build/lib.linux-x86_64-3.4/pandas/tests/indexes/timedeltas
+    copying pandas/tests/indexes/timedeltas/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/timedeltas
+    copying pandas/tests/indexes/timedeltas/test_timedelta_range.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/timedeltas
+    copying pandas/tests/indexes/timedeltas/test_tools.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/timedeltas
+    copying pandas/tests/indexes/timedeltas/test_astype.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/timedeltas
+    copying pandas/tests/indexes/timedeltas/test_timedelta.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/timedeltas
+    copying pandas/tests/indexes/timedeltas/test_construction.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/timedeltas
+    copying pandas/tests/indexes/timedeltas/test_partial_slicing.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/timedeltas
+    copying pandas/tests/indexes/timedeltas/test_setops.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/timedeltas
+    copying pandas/tests/indexes/timedeltas/test_indexing.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/timedeltas
+    copying pandas/tests/indexes/timedeltas/test_ops.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/timedeltas
+    creating build/lib.linux-x86_64-3.4/pandas/tests/indexes/period
+    copying pandas/tests/indexes/period/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/period
+    copying pandas/tests/indexes/period/test_asfreq.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/period
+    copying pandas/tests/indexes/period/test_tools.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/period
+    copying pandas/tests/indexes/period/test_construction.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/period
+    copying pandas/tests/indexes/period/test_partial_slicing.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/period
+    copying pandas/tests/indexes/period/test_setops.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/period
+    copying pandas/tests/indexes/period/test_formats.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/period
+    copying pandas/tests/indexes/period/test_indexing.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/period
+    copying pandas/tests/indexes/period/test_ops.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/period
+    copying pandas/tests/indexes/period/test_period_range.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/period
+    copying pandas/tests/indexes/period/test_period.py -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/period
+    creating build/lib.linux-x86_64-3.4/pandas/tests/internals
+    copying pandas/tests/internals/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/internals
+    copying pandas/tests/internals/test_external_block.py -> build/lib.linux-x86_64-3.4/pandas/tests/internals
+    copying pandas/tests/internals/test_internals.py -> build/lib.linux-x86_64-3.4/pandas/tests/internals
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io
+    copying pandas/tests/io/test_parquet.py -> build/lib.linux-x86_64-3.4/pandas/tests/io
+    copying pandas/tests/io/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/io
+    copying pandas/tests/io/conftest.py -> build/lib.linux-x86_64-3.4/pandas/tests/io
+    copying pandas/tests/io/test_s3.py -> build/lib.linux-x86_64-3.4/pandas/tests/io
+    copying pandas/tests/io/test_excel.py -> build/lib.linux-x86_64-3.4/pandas/tests/io
+    copying pandas/tests/io/test_html.py -> build/lib.linux-x86_64-3.4/pandas/tests/io
+    copying pandas/tests/io/test_stata.py -> build/lib.linux-x86_64-3.4/pandas/tests/io
+    copying pandas/tests/io/generate_legacy_storage_files.py -> build/lib.linux-x86_64-3.4/pandas/tests/io
+    copying pandas/tests/io/test_pickle.py -> build/lib.linux-x86_64-3.4/pandas/tests/io
+    copying pandas/tests/io/test_feather.py -> build/lib.linux-x86_64-3.4/pandas/tests/io
+    copying pandas/tests/io/test_gbq.py -> build/lib.linux-x86_64-3.4/pandas/tests/io
+    copying pandas/tests/io/test_clipboard.py -> build/lib.linux-x86_64-3.4/pandas/tests/io
+    copying pandas/tests/io/test_packers.py -> build/lib.linux-x86_64-3.4/pandas/tests/io
+    copying pandas/tests/io/test_pytables.py -> build/lib.linux-x86_64-3.4/pandas/tests/io
+    copying pandas/tests/io/test_common.py -> build/lib.linux-x86_64-3.4/pandas/tests/io
+    copying pandas/tests/io/test_sql.py -> build/lib.linux-x86_64-3.4/pandas/tests/io
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/json
+    copying pandas/tests/io/json/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/json
+    copying pandas/tests/io/json/test_json_table_schema.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/json
+    copying pandas/tests/io/json/test_normalize.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/json
+    copying pandas/tests/io/json/test_ujson.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/json
+    copying pandas/tests/io/json/test_compression.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/json
+    copying pandas/tests/io/json/test_readlines.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/json
+    copying pandas/tests/io/json/test_pandas.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/json
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/test_parsers.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/test_network.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/quoting.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/test_unsupported.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/c_parser_only.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/converters.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/mangle_dupes.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/skiprows.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/na_values.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/multithread.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/dtypes.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/compression.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/index_col.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/comment.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/python_parser_only.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/test_read_fwf.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/dialect.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/header.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/usecols.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/parse_dates.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/test_textreader.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    copying pandas/tests/io/parser/common.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/sas
+    copying pandas/tests/io/sas/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas
+    copying pandas/tests/io/sas/test_sas.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas
+    copying pandas/tests/io/sas/test_sas7bdat.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas
+    copying pandas/tests/io/sas/test_xport.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    copying pandas/tests/io/msgpack/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    copying pandas/tests/io/msgpack/test_seq.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    copying pandas/tests/io/msgpack/test_obj.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    copying pandas/tests/io/msgpack/test_newspec.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    copying pandas/tests/io/msgpack/test_format.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    copying pandas/tests/io/msgpack/test_limits.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    copying pandas/tests/io/msgpack/test_read_size.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    copying pandas/tests/io/msgpack/test_case.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    copying pandas/tests/io/msgpack/test_buffer.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    copying pandas/tests/io/msgpack/test_except.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    copying pandas/tests/io/msgpack/test_extension.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    copying pandas/tests/io/msgpack/test_pack.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    copying pandas/tests/io/msgpack/test_unpack_raw.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    copying pandas/tests/io/msgpack/test_unpack.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    copying pandas/tests/io/msgpack/test_subtype.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    copying pandas/tests/io/msgpack/test_sequnpack.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    copying pandas/tests/io/msgpack/common.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/formats
+    copying pandas/tests/io/formats/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/formats
+    copying pandas/tests/io/formats/test_to_html.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/formats
+    copying pandas/tests/io/formats/test_to_excel.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/formats
+    copying pandas/tests/io/formats/test_format.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/formats
+    copying pandas/tests/io/formats/test_style.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/formats
+    copying pandas/tests/io/formats/test_to_latex.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/formats
+    copying pandas/tests/io/formats/test_css.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/formats
+    copying pandas/tests/io/formats/test_eng_formatting.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/formats
+    copying pandas/tests/io/formats/test_to_csv.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/formats
+    copying pandas/tests/io/formats/test_printing.py -> build/lib.linux-x86_64-3.4/pandas/tests/io/formats
+    creating build/lib.linux-x86_64-3.4/pandas/tests/groupby
+    copying pandas/tests/groupby/test_nth.py -> build/lib.linux-x86_64-3.4/pandas/tests/groupby
+    copying pandas/tests/groupby/test_transform.py -> build/lib.linux-x86_64-3.4/pandas/tests/groupby
+    copying pandas/tests/groupby/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/groupby
+    copying pandas/tests/groupby/test_groupby.py -> build/lib.linux-x86_64-3.4/pandas/tests/groupby
+    copying pandas/tests/groupby/test_value_counts.py -> build/lib.linux-x86_64-3.4/pandas/tests/groupby
+    copying pandas/tests/groupby/test_filters.py -> build/lib.linux-x86_64-3.4/pandas/tests/groupby
+    copying pandas/tests/groupby/test_bin_groupby.py -> build/lib.linux-x86_64-3.4/pandas/tests/groupby
+    copying pandas/tests/groupby/test_aggregate.py -> build/lib.linux-x86_64-3.4/pandas/tests/groupby
+    copying pandas/tests/groupby/test_index_as_string.py -> build/lib.linux-x86_64-3.4/pandas/tests/groupby
+    copying pandas/tests/groupby/test_whitelist.py -> build/lib.linux-x86_64-3.4/pandas/tests/groupby
+    copying pandas/tests/groupby/test_counting.py -> build/lib.linux-x86_64-3.4/pandas/tests/groupby
+    copying pandas/tests/groupby/test_timegrouper.py -> build/lib.linux-x86_64-3.4/pandas/tests/groupby
+    copying pandas/tests/groupby/test_categorical.py -> build/lib.linux-x86_64-3.4/pandas/tests/groupby
+    copying pandas/tests/groupby/common.py -> build/lib.linux-x86_64-3.4/pandas/tests/groupby
+    creating build/lib.linux-x86_64-3.4/pandas/tests/reshape
+    copying pandas/tests/reshape/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/reshape
+    copying pandas/tests/reshape/test_merge.py -> build/lib.linux-x86_64-3.4/pandas/tests/reshape
+    copying pandas/tests/reshape/test_util.py -> build/lib.linux-x86_64-3.4/pandas/tests/reshape
+    copying pandas/tests/reshape/test_concat.py -> build/lib.linux-x86_64-3.4/pandas/tests/reshape
+    copying pandas/tests/reshape/test_union_categoricals.py -> build/lib.linux-x86_64-3.4/pandas/tests/reshape
+    copying pandas/tests/reshape/test_merge_asof.py -> build/lib.linux-x86_64-3.4/pandas/tests/reshape
+    copying pandas/tests/reshape/test_pivot.py -> build/lib.linux-x86_64-3.4/pandas/tests/reshape
+    copying pandas/tests/reshape/test_join.py -> build/lib.linux-x86_64-3.4/pandas/tests/reshape
+    copying pandas/tests/reshape/test_reshape.py -> build/lib.linux-x86_64-3.4/pandas/tests/reshape
+    copying pandas/tests/reshape/test_merge_ordered.py -> build/lib.linux-x86_64-3.4/pandas/tests/reshape
+    copying pandas/tests/reshape/test_tile.py -> build/lib.linux-x86_64-3.4/pandas/tests/reshape
+    creating build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_timeseries.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_repr.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_asof.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_apply.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_missing.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_validate.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_combine_concat.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_quantile.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_dtypes.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_sorting.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_analytics.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_datetime_values.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_alter_axes.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_subclass.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_api.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_internals.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_operators.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_io.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_replace.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_rank.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_constructors.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_indexing.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/test_period.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    copying pandas/tests/series/common.py -> build/lib.linux-x86_64-3.4/pandas/tests/series
+    creating build/lib.linux-x86_64-3.4/pandas/tests/scalar
+    copying pandas/tests/scalar/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/scalar
+    copying pandas/tests/scalar/test_nat.py -> build/lib.linux-x86_64-3.4/pandas/tests/scalar
+    copying pandas/tests/scalar/test_timedelta.py -> build/lib.linux-x86_64-3.4/pandas/tests/scalar
+    copying pandas/tests/scalar/test_period_asfreq.py -> build/lib.linux-x86_64-3.4/pandas/tests/scalar
+    copying pandas/tests/scalar/test_interval.py -> build/lib.linux-x86_64-3.4/pandas/tests/scalar
+    copying pandas/tests/scalar/test_timestamp.py -> build/lib.linux-x86_64-3.4/pandas/tests/scalar
+    copying pandas/tests/scalar/test_period.py -> build/lib.linux-x86_64-3.4/pandas/tests/scalar
+    creating build/lib.linux-x86_64-3.4/pandas/tests/tseries
+    copying pandas/tests/tseries/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/tseries
+    copying pandas/tests/tseries/test_frequencies.py -> build/lib.linux-x86_64-3.4/pandas/tests/tseries
+    copying pandas/tests/tseries/conftest.py -> build/lib.linux-x86_64-3.4/pandas/tests/tseries
+    copying pandas/tests/tseries/test_timezones.py -> build/lib.linux-x86_64-3.4/pandas/tests/tseries
+    copying pandas/tests/tseries/test_holiday.py -> build/lib.linux-x86_64-3.4/pandas/tests/tseries
+    copying pandas/tests/tseries/test_offsets.py -> build/lib.linux-x86_64-3.4/pandas/tests/tseries
+    creating build/lib.linux-x86_64-3.4/pandas/tests/plotting
+    copying pandas/tests/plotting/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/plotting
+    copying pandas/tests/plotting/test_misc.py -> build/lib.linux-x86_64-3.4/pandas/tests/plotting
+    copying pandas/tests/plotting/test_deprecated.py -> build/lib.linux-x86_64-3.4/pandas/tests/plotting
+    copying pandas/tests/plotting/test_converter.py -> build/lib.linux-x86_64-3.4/pandas/tests/plotting
+    copying pandas/tests/plotting/test_series.py -> build/lib.linux-x86_64-3.4/pandas/tests/plotting
+    copying pandas/tests/plotting/test_groupby.py -> build/lib.linux-x86_64-3.4/pandas/tests/plotting
+    copying pandas/tests/plotting/test_boxplot_method.py -> build/lib.linux-x86_64-3.4/pandas/tests/plotting
+    copying pandas/tests/plotting/test_frame.py -> build/lib.linux-x86_64-3.4/pandas/tests/plotting
+    copying pandas/tests/plotting/test_datetimelike.py -> build/lib.linux-x86_64-3.4/pandas/tests/plotting
+    copying pandas/tests/plotting/common.py -> build/lib.linux-x86_64-3.4/pandas/tests/plotting
+    copying pandas/tests/plotting/test_hist_method.py -> build/lib.linux-x86_64-3.4/pandas/tests/plotting
+    creating build/lib.linux-x86_64-3.4/pandas/tests/tools
+    copying pandas/tests/tools/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/tools
+    copying pandas/tests/tools/test_numeric.py -> build/lib.linux-x86_64-3.4/pandas/tests/tools
+    creating build/lib.linux-x86_64-3.4/pandas/tests/util
+    copying pandas/tests/util/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tests/util
+    copying pandas/tests/util/test_util.py -> build/lib.linux-x86_64-3.4/pandas/tests/util
+    copying pandas/tests/util/test_testing.py -> build/lib.linux-x86_64-3.4/pandas/tests/util
+    copying pandas/tests/util/test_hashing.py -> build/lib.linux-x86_64-3.4/pandas/tests/util
+    creating build/lib.linux-x86_64-3.4/pandas/tools
+    copying pandas/tools/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tools
+    copying pandas/tools/plotting.py -> build/lib.linux-x86_64-3.4/pandas/tools
+    copying pandas/tools/hashing.py -> build/lib.linux-x86_64-3.4/pandas/tools
+    copying pandas/tools/merge.py -> build/lib.linux-x86_64-3.4/pandas/tools
+    creating build/lib.linux-x86_64-3.4/pandas/tseries
+    copying pandas/tseries/__init__.py -> build/lib.linux-x86_64-3.4/pandas/tseries
+    copying pandas/tseries/plotting.py -> build/lib.linux-x86_64-3.4/pandas/tseries
+    copying pandas/tseries/converter.py -> build/lib.linux-x86_64-3.4/pandas/tseries
+    copying pandas/tseries/holiday.py -> build/lib.linux-x86_64-3.4/pandas/tseries
+    copying pandas/tseries/frequencies.py -> build/lib.linux-x86_64-3.4/pandas/tseries
+    copying pandas/tseries/util.py -> build/lib.linux-x86_64-3.4/pandas/tseries
+    copying pandas/tseries/offsets.py -> build/lib.linux-x86_64-3.4/pandas/tseries
+    copying pandas/tseries/api.py -> build/lib.linux-x86_64-3.4/pandas/tseries
+    creating build/lib.linux-x86_64-3.4/pandas/io/formats/templates
+    copying pandas/io/formats/templates/html.tpl -> build/lib.linux-x86_64-3.4/pandas/io/formats/templates
+    creating build/lib.linux-x86_64-3.4/pandas/tests/data
+    copying pandas/tests/data/tips.csv -> build/lib.linux-x86_64-3.4/pandas/tests/data
+    copying pandas/tests/data/iris.csv -> build/lib.linux-x86_64-3.4/pandas/tests/data
+    creating build/lib.linux-x86_64-3.4/pandas/tests/indexes/data
+    copying pandas/tests/indexes/data/mindex_073.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/data
+    copying pandas/tests/indexes/data/multiindex_v1.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/indexes/data
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_hdf
+    copying pandas/tests/io/data/legacy_hdf/pytables_native.h5 -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_hdf
+    copying pandas/tests/io/data/legacy_hdf/legacy_table.h5 -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_hdf
+    copying pandas/tests/io/data/legacy_hdf/pytables_native2.h5 -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_hdf
+    copying pandas/tests/io/data/legacy_hdf/periodindex_0.20.1_x86_64_darwin_2.7.13.h5 -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_hdf
+    copying pandas/tests/io/data/legacy_hdf/datetimetz_object.h5 -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_hdf
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.20.3
+    copying pandas/tests/io/data/legacy_pickle/0.20.3/0.20.3_x86_64_darwin_2.7.14.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.20.3
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.18.0
+    copying pandas/tests/io/data/legacy_pickle/0.18.0/0.18.0_x86_64_darwin_3.5.1.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.18.0
+    copying pandas/tests/io/data/legacy_pickle/0.18.0/0.18.0_AMD64_windows_3.5.1.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.18.0
+    copying pandas/tests/io/data/legacy_pickle/0.18.0/0.18.0_AMD64_windows_2.7.11.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.18.0
+    copying pandas/tests/io/data/legacy_pickle/0.18.0/0.18.0_x86_64_darwin_2.7.11.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.18.0
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.12.0
+    copying pandas/tests/io/data/legacy_pickle/0.12.0/0.12.0_x86_64_linux_2.7.3.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.12.0
+    copying pandas/tests/io/data/legacy_pickle/0.12.0/0.12.0_AMD64_windows_2.7.3.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.12.0
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.11.0
+    copying pandas/tests/io/data/legacy_pickle/0.11.0/0.11.0_x86_64_linux_3.3.0.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.11.0
+    copying pandas/tests/io/data/legacy_pickle/0.11.0/x86_64_linux_3.3.0.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.11.0
+    copying pandas/tests/io/data/legacy_pickle/0.11.0/x86_64_linux_2.7.3.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.11.0
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.18.1
+    copying pandas/tests/io/data/legacy_pickle/0.18.1/0.18.1_x86_64_darwin_3.5.2.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.18.1
+    copying pandas/tests/io/data/legacy_pickle/0.18.1/0.18.1_x86_64_darwin_2.7.12.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.18.1
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.10.1
+    copying pandas/tests/io/data/legacy_pickle/0.10.1/AMD64_windows_2.7.3.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.10.1
+    copying pandas/tests/io/data/legacy_pickle/0.10.1/x86_64_linux_2.7.3.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.10.1
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.16.2
+    copying pandas/tests/io/data/legacy_pickle/0.16.2/0.16.2_x86_64_darwin_2.7.10.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.16.2
+    copying pandas/tests/io/data/legacy_pickle/0.16.2/0.16.2_x86_64_linux_3.4.3.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.16.2
+    copying pandas/tests/io/data/legacy_pickle/0.16.2/0.16.2_x86_64_darwin_2.7.9.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.16.2
+    copying pandas/tests/io/data/legacy_pickle/0.16.2/0.16.2_AMD64_windows_2.7.10.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.16.2
+    copying pandas/tests/io/data/legacy_pickle/0.16.2/0.16.2_x86_64_linux_2.7.10.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.16.2
+    copying pandas/tests/io/data/legacy_pickle/0.16.2/0.16.2_AMD64_windows_3.4.3.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.16.2
+    copying pandas/tests/io/data/legacy_pickle/0.16.2/0.16.2_x86_64_darwin_3.4.3.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.16.2
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.13.0
+    copying pandas/tests/io/data/legacy_pickle/0.13.0/0.13.0_i686_linux_2.6.5.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.13.0
+    copying pandas/tests/io/data/legacy_pickle/0.13.0/0.13.0_x86_64_linux_2.7.3.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.13.0
+    copying pandas/tests/io/data/legacy_pickle/0.13.0/0.13.0_i686_linux_2.7.3.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.13.0
+    copying pandas/tests/io/data/legacy_pickle/0.13.0/0.13.0_AMD64_windows_2.7.3.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.13.0
+    copying pandas/tests/io/data/legacy_pickle/0.13.0/0.13.0_x86_64_darwin_2.7.5.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.13.0
+    copying pandas/tests/io/data/legacy_pickle/0.13.0/0.13.0_i686_linux_3.2.3.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.13.0
+    copying pandas/tests/io/data/legacy_pickle/0.13.0/0.13.0_x86_64_darwin_2.7.6.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.13.0
+    copying pandas/tests/io/data/legacy_pickle/0.13.0/0.13.0_x86_64_linux_2.7.8.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.13.0
+    copying pandas/tests/io/data/legacy_pickle/0.13.0/0.13.0_x86_64_linux_3.3.0.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.13.0
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.15.0
+    copying pandas/tests/io/data/legacy_pickle/0.15.0/0.15.0_x86_64_darwin_2.7.12.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.15.0
+    copying pandas/tests/io/data/legacy_pickle/0.15.0/0.15.0_x86_64_linux_2.7.8.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.15.0
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.14.0
+    copying pandas/tests/io/data/legacy_pickle/0.14.0/0.14.0_x86_64_linux_2.7.8.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.14.0
+    copying pandas/tests/io/data/legacy_pickle/0.14.0/0.14.0_x86_64_darwin_2.7.6.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.14.0
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.17.1
+    copying pandas/tests/io/data/legacy_pickle/0.17.1/0.17.1_AMD64_windows_2.7.11.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.17.1
+    copying pandas/tests/io/data/legacy_pickle/0.17.1/0.17.1_x86_64_darwin_2.7.11.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.17.1
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.17.0
+    copying pandas/tests/io/data/legacy_pickle/0.17.0/0.17.0_x86_64_linux_2.7.11.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.17.0
+    copying pandas/tests/io/data/legacy_pickle/0.17.0/0.17.1_AMD64_windows_2.7.11.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.17.0
+    copying pandas/tests/io/data/legacy_pickle/0.17.0/0.17.0_x86_64_darwin_3.4.4.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.17.0
+    copying pandas/tests/io/data/legacy_pickle/0.17.0/0.17.0_AMD64_windows_2.7.11.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.17.0
+    copying pandas/tests/io/data/legacy_pickle/0.17.0/0.17.0_AMD64_windows_3.4.4.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.17.0
+    copying pandas/tests/io/data/legacy_pickle/0.17.0/0.17.0_x86_64_linux_3.4.4.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.17.0
+    copying pandas/tests/io/data/legacy_pickle/0.17.0/0.17.0_x86_64_darwin_2.7.11.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.17.0
+    copying pandas/tests/io/data/legacy_pickle/0.17.0/0.17.0_x86_64_darwin_3.5.3.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.17.0
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.14.1
+    copying pandas/tests/io/data/legacy_pickle/0.14.1/0.14.1_x86_64_darwin_2.7.12.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.14.1
+    copying pandas/tests/io/data/legacy_pickle/0.14.1/0.14.1_x86_64_linux_2.7.8.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.14.1
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.15.2
+    copying pandas/tests/io/data/legacy_pickle/0.15.2/0.15.2_x86_64_darwin_2.7.9.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.15.2
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.19.2
+    copying pandas/tests/io/data/legacy_pickle/0.19.2/0.19.2_x86_64_darwin_2.7.14.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.19.2
+    copying pandas/tests/io/data/legacy_pickle/0.19.2/0.19.2_x86_64_darwin_2.7.12.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.19.2
+    copying pandas/tests/io/data/legacy_pickle/0.19.2/0.19.2_x86_64_darwin_3.6.1.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.19.2
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.16.0
+    copying pandas/tests/io/data/legacy_pickle/0.16.0/0.16.0_x86_64_darwin_2.7.9.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_pickle/0.16.0
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.18.0
+    copying pandas/tests/io/data/legacy_msgpack/0.18.0/0.18.0_x86_64_darwin_3.5.1.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.18.0
+    copying pandas/tests/io/data/legacy_msgpack/0.18.0/0.18.0_AMD64_windows_3.5.1.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.18.0
+    copying pandas/tests/io/data/legacy_msgpack/0.18.0/0.18.0_AMD64_windows_2.7.11.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.18.0
+    copying pandas/tests/io/data/legacy_msgpack/0.18.0/0.18.0_x86_64_darwin_2.7.11.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.18.0
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.18.1
+    copying pandas/tests/io/data/legacy_msgpack/0.18.1/0.18.1_x86_64_darwin_3.5.2.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.18.1
+    copying pandas/tests/io/data/legacy_msgpack/0.18.1/0.18.1_x86_64_darwin_2.7.12.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.18.1
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.16.2
+    copying pandas/tests/io/data/legacy_msgpack/0.16.2/0.16.2_AMD64_windows_2.7.10.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.16.2
+    copying pandas/tests/io/data/legacy_msgpack/0.16.2/0.16.2_x86_64_darwin_3.4.3.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.16.2
+    copying pandas/tests/io/data/legacy_msgpack/0.16.2/0.16.2_x86_64_darwin_2.7.9.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.16.2
+    copying pandas/tests/io/data/legacy_msgpack/0.16.2/0.16.2_x86_64_darwin_2.7.10.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.16.2
+    copying pandas/tests/io/data/legacy_msgpack/0.16.2/0.16.2_AMD64_windows_3.4.3.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.16.2
+    copying pandas/tests/io/data/legacy_msgpack/0.16.2/0.16.2_x86_64_linux_2.7.10.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.16.2
+    copying pandas/tests/io/data/legacy_msgpack/0.16.2/0.16.2_x86_64_linux_3.4.3.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.16.2
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.17.1
+    copying pandas/tests/io/data/legacy_msgpack/0.17.1/0.17.1_x86_64_darwin_2.7.11.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.17.1
+    copying pandas/tests/io/data/legacy_msgpack/0.17.1/0.17.1_AMD64_windows_3.5.1.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.17.1
+    copying pandas/tests/io/data/legacy_msgpack/0.17.1/0.17.1_x86_64_darwin_3.5.1.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.17.1
+    copying pandas/tests/io/data/legacy_msgpack/0.17.1/0.17.1_x86_64_linux_3.4.4.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.17.1
+    copying pandas/tests/io/data/legacy_msgpack/0.17.1/0.17.1_AMD64_windows_2.7.11.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.17.1
+    copying pandas/tests/io/data/legacy_msgpack/0.17.1/0.17.1_x86_64_linux_2.7.11.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.17.1
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.17.0
+    copying pandas/tests/io/data/legacy_msgpack/0.17.0/0.17.1_AMD64_windows_3.5.1.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.17.0
+    copying pandas/tests/io/data/legacy_msgpack/0.17.0/0.17.0_x86_64_darwin_3.4.4.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.17.0
+    copying pandas/tests/io/data/legacy_msgpack/0.17.0/0.17.0_AMD64_windows_3.4.4.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.17.0
+    copying pandas/tests/io/data/legacy_msgpack/0.17.0/0.17.1_AMD64_windows_2.7.11.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.17.0
+    copying pandas/tests/io/data/legacy_msgpack/0.17.0/0.17.0_x86_64_darwin_2.7.11.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.17.0
+    copying pandas/tests/io/data/legacy_msgpack/0.17.0/0.17.0_x86_64_linux_3.4.4.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.17.0
+    copying pandas/tests/io/data/legacy_msgpack/0.17.0/0.17.0_AMD64_windows_2.7.11.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.17.0
+    copying pandas/tests/io/data/legacy_msgpack/0.17.0/0.17.0_x86_64_linux_2.7.11.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.17.0
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.19.2
+    copying pandas/tests/io/data/legacy_msgpack/0.19.2/0.19.2_x86_64_darwin_2.7.12.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.19.2
+    copying pandas/tests/io/data/legacy_msgpack/0.19.2/0.19.2_x86_64_darwin_3.6.1.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.19.2
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.16.0
+    copying pandas/tests/io/data/legacy_msgpack/0.16.0/0.16.0_x86_64_darwin_2.7.9.msgpack -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/legacy_msgpack/0.16.0
+    copying pandas/tests/io/data/tips.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata6.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata3.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/banklist.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test1.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test_mmap.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/iris.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata5.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata2_113.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata6_117.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata3_113.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata4_115.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata6_114.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata3_114.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata1_117.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata3_117.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata7_115.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata11_115.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata6_115.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata10_117.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata12_117.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata7_117.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata5_115.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata9_115.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata1_encoding.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata8_115.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata6_113.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata13_dates.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata3_115.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/S4_EDUC1.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata7_111.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata5_113.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata11_117.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata8_113.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata1_114.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata9_117.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata5_117.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata2_117.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata2_114.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata4_117.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata4_114.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata15.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata8_117.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata5_114.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata14_118.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata2_115.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata10_115.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/stata4_113.dta -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/categorical_0_14_1.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/categorical_0_15_2.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/gbq_fake_job.txt -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/fixed_width_format.txt -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/times_1900.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/blank_with_header.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test_converters.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test_squeeze.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test_index_name_pre17.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test5.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/testskiprows.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/testdtype.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/times_1904.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test2.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test4.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test_multisheet.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test3.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test_types.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/testmultiindex.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/blank.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test1.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/testdateoverflow.xls -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test5.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/blank.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test_multisheet.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/times_1900.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/testdtype.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test2.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test_squeeze.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test3.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/blank_with_header.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test1.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/times_1904.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test_converters.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/testdateoverflow.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test4.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test_index_name_pre17.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test_types.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/testskiprows.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/testmultiindex.xlsx -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/testskiprows.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test1.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/times_1900.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/blank_with_header.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test_squeeze.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/testdateoverflow.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/times_1904.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test_converters.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test_multisheet.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/testmultiindex.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test3.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test5.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test_index_name_pre17.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test2.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test_types.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/test4.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/blank.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/testdtype.xlsm -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/sub_char.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/tips.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/test2.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/sauron.SHIFT_JIS.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/unicode_series.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/salaries.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/test1.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/test_mmap.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/iris.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/test1.csv.gz -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/tips.csv.gz -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/salaries.csv.gz -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/tar_csv.tar.gz -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/salaries.csv.bz2 -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/test1.csv.bz2 -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/tips.csv.bz2 -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/utf16_ex.txt -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/tar_csv.tar -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/salaries.csv.zip -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    copying pandas/tests/io/parser/data/utf16_ex_small.zip -> build/lib.linux-x86_64-3.4/pandas/tests/io/parser/data
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/paxraw_d_short.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/datetime.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/airline.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/productsales.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test_sas7bdat_2.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test_sas7bdat_1.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/DEMO_G.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test_12659.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/DRXFCD_G.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/SSHSV1_A.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/SSHSV1_A.xpt -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/DEMO_G.xpt -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/DRXFCD_G.xpt -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/paxraw_d_short.xpt -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test15.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test4.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test1.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test_12659.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/airline.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test13.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test6.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test9.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/datetime.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test14.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test12.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test11.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test8.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test3.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test16.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test5.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test7.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test2.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/productsales.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/sas/data/test10.sas7bdat -> build/lib.linux-x86_64-3.4/pandas/tests/io/sas/data
+    copying pandas/tests/io/data/macau.html -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/spam.html -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/nyse_wsj.html -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/computer_sales_page.html -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/wikipedia_states.html -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/banklist.html -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    copying pandas/tests/io/data/valid_markup.html -> build/lib.linux-x86_64-3.4/pandas/tests/io/data
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/data/html_encoding
+    copying pandas/tests/io/data/html_encoding/chinese_utf-16.html -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/html_encoding
+    copying pandas/tests/io/data/html_encoding/letz_latin1.html -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/html_encoding
+    copying pandas/tests/io/data/html_encoding/chinese_utf-32.html -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/html_encoding
+    copying pandas/tests/io/data/html_encoding/chinese_utf-8.html -> build/lib.linux-x86_64-3.4/pandas/tests/io/data/html_encoding
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/json/data
+    copying pandas/tests/io/json/data/tsframe_v012.json -> build/lib.linux-x86_64-3.4/pandas/tests/io/json/data
+    copying pandas/tests/io/json/data/tsframe_iso_v012.json -> build/lib.linux-x86_64-3.4/pandas/tests/io/json/data
+    copying pandas/tests/io/json/data/tsframe_v012.json.zip -> build/lib.linux-x86_64-3.4/pandas/tests/io/json/data
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack/data
+    copying pandas/tests/io/msgpack/data/frame.mp -> build/lib.linux-x86_64-3.4/pandas/tests/io/msgpack/data
+    creating build/lib.linux-x86_64-3.4/pandas/tests/io/formats/data
+    copying pandas/tests/io/formats/data/unicode_series.csv -> build/lib.linux-x86_64-3.4/pandas/tests/io/formats/data
+    creating build/lib.linux-x86_64-3.4/pandas/tests/reshape/data
+    copying pandas/tests/reshape/data/quotes.csv -> build/lib.linux-x86_64-3.4/pandas/tests/reshape/data
+    copying pandas/tests/reshape/data/cut_data.csv -> build/lib.linux-x86_64-3.4/pandas/tests/reshape/data
+    copying pandas/tests/reshape/data/quotes2.csv -> build/lib.linux-x86_64-3.4/pandas/tests/reshape/data
+    copying pandas/tests/reshape/data/asof.csv -> build/lib.linux-x86_64-3.4/pandas/tests/reshape/data
+    copying pandas/tests/reshape/data/allow_exact_matches.csv -> build/lib.linux-x86_64-3.4/pandas/tests/reshape/data
+    copying pandas/tests/reshape/data/tolerance.csv -> build/lib.linux-x86_64-3.4/pandas/tests/reshape/data
+    copying pandas/tests/reshape/data/asof2.csv -> build/lib.linux-x86_64-3.4/pandas/tests/reshape/data
+    copying pandas/tests/reshape/data/trades.csv -> build/lib.linux-x86_64-3.4/pandas/tests/reshape/data
+    copying pandas/tests/reshape/data/trades2.csv -> build/lib.linux-x86_64-3.4/pandas/tests/reshape/data
+    copying pandas/tests/reshape/data/allow_exact_matches_and_tolerance.csv -> build/lib.linux-x86_64-3.4/pandas/tests/reshape/data
+    creating build/lib.linux-x86_64-3.4/pandas/tests/tseries/data
+    copying pandas/tests/tseries/data/cday-0.14.1.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/tseries/data
+    copying pandas/tests/tseries/data/dateoffset_0_15_2.pickle -> build/lib.linux-x86_64-3.4/pandas/tests/tseries/data
+    UPDATING build/lib.linux-x86_64-3.4/pandas/_version.py
+    set build/lib.linux-x86_64-3.4/pandas/_version.py to '0.22.0'
+    running build_ext
+    pandas._libs.window: -> [['pandas/_libs/window.c']]
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/tmp/pip-build-lcseqgfy/pandas/setup.py", line 743, in <module>
+        **setuptools_kwargs)
+      File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/distutils/core.py", line 148, in setup
+        dist.run_commands()
+      File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/distutils/dist.py", line 955, in run_commands
+        self.run_command(cmd)
+      File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/distutils/dist.py", line 974, in run_command
+        cmd_obj.run()
+      File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/setuptools-27.2.0-py3.4.egg/setuptools/command/install.py", line 61, in run
+      File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/distutils/command/install.py", line 539, in run
+        self.run_command('build')
+      File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/distutils/cmd.py", line 313, in run_command
+        self.distribution.run_command(command)
+      File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/distutils/dist.py", line 974, in run_command
+        cmd_obj.run()
+      File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/distutils/command/build.py", line 126, in run
+        self.run_command(cmd_name)
+      File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/distutils/cmd.py", line 313, in run_command
+        self.distribution.run_command(command)
+      File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/distutils/dist.py", line 974, in run_command
+        cmd_obj.run()
+      File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/distutils/command/build_ext.py", line 339, in run
+        self.build_extensions()
+      File "/tmp/pip-build-lcseqgfy/pandas/setup.py", line 384, in build_extensions
+        self.check_cython_extensions(self.extensions)
+      File "/tmp/pip-build-lcseqgfy/pandas/setup.py", line 381, in check_cython_extensions
+        """ % src)
+    Exception: Cython-generated file 'pandas/_libs/window.c' not found.
+                    Cython is required to compile pandas from a development branch.
+                    Please install Cython or download a release package of pandas.
+    
+    
+    ----------------------------------------
+  Rolling back uninstall of pandas
+Command "/home/dhankar/anaconda2/envs/gisenv/bin/python -u -c "import setuptools, tokenize;__file__='/tmp/pip-build-lcseqgfy/pandas/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record /tmp/pip-fhsd4jo5-record/install-record.txt --single-version-externally-managed --compile" failed with error code 1 in /tmp/pip-build-lcseqgfy/pandas/
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ pip install cython
+Collecting cython
+  Downloading Cython-0.27.3-cp34-cp34m-manylinux1_x86_64.whl (3.0MB)
+    100% |████████████████████████████████| 3.0MB 214kB/s 
+Installing collected packages: cython
+Successfully installed cython-0.27.3
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ pip install --upgrade pandas
+Collecting pandas
+  Using cached pandas-0.22.0.tar.gz
+Requirement already up-to-date: python-dateutil>=2 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from pandas)
+Requirement already up-to-date: pytz>=2011k in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from pandas)
+Requirement already up-to-date: numpy>=1.9.0 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from pandas)
+Requirement already up-to-date: six>=1.5 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from python-dateutil>=2->pandas)
+Building wheels for collected packages: pandas
+  Running setup.py bdist_wheel for pandas ... \^error
+  Failed building wheel for pandas
+  Running setup.py clean for pandas
+Failed to build pandas
+Installing collected packages: pandas
+  Found existing installation: pandas 0.21.0
+    Uninstalling pandas-0.21.0:
+      Successfully uninstalled pandas-0.21.0
+  Running setup.py install for pandas ... \^canceled
+  Rolling back uninstall of pandas
+Operation cancelled by user
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ pip install --upgrade pandas
+Collecting pandas
+  Using cached pandas-0.22.0.tar.gz
+Requirement already up-to-date: python-dateutil>=2 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from pandas)
+Requirement already up-to-date: pytz>=2011k in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from pandas)
+Requirement already up-to-date: numpy>=1.9.0 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from pandas)
+Requirement already up-to-date: six>=1.5 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from python-dateutil>=2->pandas)
+Building wheels for collected packages: pandas
+  Running setup.py bdist_wheel for pandas ... done
+  Stored in directory: /home/dhankar/.cache/pip/wheels/e8/ed/46/0596b51014f3cc49259e52dff9824e1c6fe352048a2656fc92
+Successfully built pandas
+Installing collected packages: pandas
+Successfully installed pandas-0.22.0
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ pip freeze
+branca==0.2.0
+certifi==2018.1.18
+chardet==3.0.4
+click==6.7
+click-plugins==1.0.3
+cligj==0.4.0
+cycler==0.10.0
+Cython==0.27.3
+descartes==1.1.0
+Fiona==1.7.11.post1
+folium==0.5.0
+geojson==2.3.0
+geopandas==0.3.0
+idna==2.6
+Jinja2==2.10
+MarkupSafe==1.0
+matplotlib==2.1.2
+munch==2.2.0
+numexpr==2.6.4
+numpy==1.14.1
+pandas==0.22.0
+pyparsing==2.2.0
+pyproj==1.9.5.1
+PySAL==1.14.3
+python-dateutil==2.6.1
+pytz==2018.3
+requests==2.18.4
+scipy==1.0.0
+Shapely==1.6.4.post1
+six==1.11.0
+urllib3==1.22
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ python
+Python 3.4.5 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:47:47) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> import pysal
+>>> import pandas
+>>> import shapely
+>>> 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ python
+Python 3.4.5 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:47:47) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import geopandas
+>>> import fiona
+>>> 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+
