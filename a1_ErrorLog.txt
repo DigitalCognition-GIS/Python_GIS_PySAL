@@ -1,5 +1,7 @@
 ## Initial Hiccups with installations 
 ## https://github.com/pandas-dev/pandas/issues/3785
+## http://ipython.readthedocs.io/en/stable/install/kernel_install.html
+## http://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments
 
 
 ## Error - 2
