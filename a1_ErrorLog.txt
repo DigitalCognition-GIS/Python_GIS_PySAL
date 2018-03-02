@@ -2,45 +2,151 @@
 ## https://github.com/pandas-dev/pandas/issues/3785
 
 
----------------------------------------------------------------------------
-ImportError                               Traceback (most recent call last)
-<ipython-input-1-78e95335453d> in <module>()
-----> 1 import pysal
-      2 import geopandas
-      3 import fiona
+## Error - 2
 
-ImportError: No module named pysal
 
-[I 23:40:59.723 NotebookApp] Kernel shutdown: 4d8095a8-9aac-4587-9de3-7bbc7339f589
+Serving notebooks from local directory: /home/dhankar/Desktop/Geo_1
+1 active kernels 
+The Jupyter Notebook is running at: http://localhost:8889/
+Shutdown this notebook server (y/[n])? y
+[C 08:46:57.691 NotebookApp] Shutdown confirmed
+[I 08:46:57.692 NotebookApp] Shutting down kernels
+[I 08:46:58.295 NotebookApp] Kernel shutdown: 558da9d7-9c77-44e7-93e4-e84da36a4f99
+(ipykernel_py34) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(ipykernel_py34) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ source deactivate
+dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ source activate gisenv
 (gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
-(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ python
-Python 3.4.5 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:47:47) 
-[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
-Type "help", "copyright", "credits" or "license" for more information.
->>> 
->>> import pysal
->>> 
->>> import geopandas
-Traceback (most recent call last):
-  File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/pandas/__init__.py", line 26, in <module>
-    from pandas._libs import (hashtable as _hashtable,
-  File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/pandas/_libs/__init__.py", line 4, in <module>
-    from .tslib import iNaT, NaT, Timestamp, Timedelta, OutOfBoundsDatetime
-ImportError: No module named 'pandas._libs.tslib'
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ python -m ipykernel install --name gisenv --display-name "GISENV - Py3.4"
+/home/dhankar/anaconda2/envs/gisenv/bin/python: No module named ipykernel
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ pip install ipykernel
+Collecting ipykernel
+  Downloading ipykernel-4.8.2-py3-none-any.whl (108kB)
+    100% |████████████████████████████████| 112kB 242kB/s 
+Collecting ipython>=4.0.0 (from ipykernel)
+  Downloading ipython-6.2.1-py3-none-any.whl (745kB)
+    100% |████████████████████████████████| 747kB 677kB/s 
+Collecting jupyter-client (from ipykernel)
+  Downloading jupyter_client-5.2.2-py2.py3-none-any.whl (88kB)
+    100% |████████████████████████████████| 92kB 4.4MB/s 
+Collecting traitlets>=4.1.0 (from ipykernel)
+  Using cached traitlets-4.3.2-py2.py3-none-any.whl
+Collecting tornado>=4.0 (from ipykernel)
+  Downloading tornado-4.5.3.tar.gz (484kB)
+    100% |████████████████████████████████| 491kB 1.3MB/s 
+Collecting pexpect; sys_platform != "win32" (from ipython>=4.0.0->ipykernel)
+  Downloading pexpect-4.4.0-py2.py3-none-any.whl (56kB)
+    100% |████████████████████████████████| 61kB 5.0MB/s 
+Collecting decorator (from ipython>=4.0.0->ipykernel)
+  Downloading decorator-4.2.1-py2.py3-none-any.whl
+Collecting pygments (from ipython>=4.0.0->ipykernel)
+  Using cached Pygments-2.2.0-py2.py3-none-any.whl
+Collecting jedi>=0.10 (from ipython>=4.0.0->ipykernel)
+  Downloading jedi-0.11.1-py2.py3-none-any.whl (250kB)
+    100% |████████████████████████████████| 256kB 2.3MB/s 
+Collecting typing; python_version <= "3.4" (from ipython>=4.0.0->ipykernel)
+  Downloading typing-3.6.4-py3-none-any.whl
+Collecting pickleshare (from ipython>=4.0.0->ipykernel)
+  Using cached pickleshare-0.7.4-py2.py3-none-any.whl
+Collecting simplegeneric>0.8 (from ipython>=4.0.0->ipykernel)
+  Using cached simplegeneric-0.8.1.zip
+Collecting prompt-toolkit<2.0.0,>=1.0.4 (from ipython>=4.0.0->ipykernel)
+  Using cached prompt_toolkit-1.0.15-py3-none-any.whl
+Requirement already satisfied: setuptools>=18.5 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/setuptools-27.2.0-py3.4.egg (from ipython>=4.0.0->ipykernel)
+Requirement already satisfied: python-dateutil>=2.1 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from jupyter-client->ipykernel)
+Collecting pyzmq>=13 (from jupyter-client->ipykernel)
+  Downloading pyzmq-17.0.0-cp34-cp34m-manylinux1_x86_64.whl (3.1MB)
+    100% |████████████████████████████████| 3.1MB 233kB/s 
+Collecting jupyter-core (from jupyter-client->ipykernel)
+  Downloading jupyter_core-4.4.0-py2.py3-none-any.whl (126kB)
+    100% |████████████████████████████████| 133kB 3.6MB/s 
+Collecting ipython-genutils (from traitlets>=4.1.0->ipykernel)
+  Using cached ipython_genutils-0.2.0-py2.py3-none-any.whl
+Requirement already satisfied: six in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from traitlets>=4.1.0->ipykernel)
+Collecting backports_abc>=0.4 (from tornado>=4.0->ipykernel)
+  Downloading backports_abc-0.5-py2.py3-none-any.whl
+Collecting ptyprocess>=0.5 (from pexpect; sys_platform != "win32"->ipython>=4.0.0->ipykernel)
+  Using cached ptyprocess-0.5.2-py2.py3-none-any.whl
+Collecting parso==0.1.1 (from jedi>=0.10->ipython>=4.0.0->ipykernel)
+  Downloading parso-0.1.1-py2.py3-none-any.whl (91kB)
+    100% |████████████████████████████████| 92kB 5.8MB/s 
+Collecting wcwidth (from prompt-toolkit<2.0.0,>=1.0.4->ipython>=4.0.0->ipykernel)
+  Using cached wcwidth-0.1.7-py2.py3-none-any.whl
+Building wheels for collected packages: tornado, simplegeneric
+  Running setup.py bdist_wheel for tornado ... done
+  Stored in directory: /home/dhankar/.cache/pip/wheels/0c/21/02/8cdc6a381450df92b449ea7c57be653dd7aa80ba42c716212c
+  Running setup.py bdist_wheel for simplegeneric ... done
+  Stored in directory: /home/dhankar/.cache/pip/wheels/7b/31/08/c85e74c84188cbec6a6827beec4d640f2bd78ae003dc1ec09d
+Successfully built tornado simplegeneric
+Installing collected packages: ptyprocess, pexpect, decorator, pygments, parso, jedi, typing, pickleshare, simplegeneric, wcwidth, prompt-toolkit, ipython-genutils, traitlets, ipython, pyzmq, backports-abc, tornado, jupyter-core, jupyter-client, ipykernel
+Successfully installed backports-abc-0.5 decorator-4.2.1 ipykernel-4.8.2 ipython-6.2.1 ipython-genutils-0.2.0 jedi-0.11.1 jupyter-client-5.2.2 jupyter-core-4.4.0 parso-0.1.1 pexpect-4.4.0 pickleshare-0.7.4 prompt-toolkit-1.0.15 ptyprocess-0.5.2 pygments-2.2.0 pyzmq-17.0.0 simplegeneric-0.8.1 tornado-4.5.3 traitlets-4.3.2 typing-3.6.4 wcwidth-0.1.7
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ python -m ipykernel install --name gisenv --display-name "GISENV - Py3.4"
+[Errno 13] Permission denied: '/usr/local/share/jupyter'
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ sudo python -m ipykernel install --name gisenv --display-name "GISENV - Py3.4"
+[sudo] password for dhankar: 
+/usr/bin/python: No module named ipykernel
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ sudo python -m ipykernel install --name gisenv --display-name "GISENV - Py3.4"
+/usr/bin/python: No module named ipykernel
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ pip install ipykernel
+Requirement already satisfied: ipykernel in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages
+Requirement already satisfied: tornado>=4.0 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from ipykernel)
+Requirement already satisfied: traitlets>=4.1.0 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from ipykernel)
+Requirement already satisfied: jupyter-client in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from ipykernel)
+Requirement already satisfied: ipython>=4.0.0 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from ipykernel)
+Requirement already satisfied: backports-abc>=0.4 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from tornado>=4.0->ipykernel)
+Requirement already satisfied: ipython-genutils in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from traitlets>=4.1.0->ipykernel)
+Requirement already satisfied: six in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from traitlets>=4.1.0->ipykernel)
+Requirement already satisfied: decorator in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from traitlets>=4.1.0->ipykernel)
+Requirement already satisfied: python-dateutil>=2.1 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from jupyter-client->ipykernel)
+Requirement already satisfied: jupyter-core in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from jupyter-client->ipykernel)
+Requirement already satisfied: pyzmq>=13 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from jupyter-client->ipykernel)
+Requirement already satisfied: setuptools>=18.5 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/setuptools-27.2.0-py3.4.egg (from ipython>=4.0.0->ipykernel)
+Requirement already satisfied: pickleshare in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from ipython>=4.0.0->ipykernel)
+Requirement already satisfied: simplegeneric>0.8 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from ipython>=4.0.0->ipykernel)
+Requirement already satisfied: jedi>=0.10 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from ipython>=4.0.0->ipykernel)
+Requirement already satisfied: prompt-toolkit<2.0.0,>=1.0.4 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from ipython>=4.0.0->ipykernel)
+Requirement already satisfied: pexpect; sys_platform != "win32" in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from ipython>=4.0.0->ipykernel)
+Requirement already satisfied: pygments in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from ipython>=4.0.0->ipykernel)
+Requirement already satisfied: typing; python_version <= "3.4" in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from ipython>=4.0.0->ipykernel)
+Requirement already satisfied: parso==0.1.1 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from jedi>=0.10->ipython>=4.0.0->ipykernel)
+Requirement already satisfied: wcwidth in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from prompt-toolkit<2.0.0,>=1.0.4->ipython>=4.0.0->ipykernel)
+Requirement already satisfied: ptyprocess>=0.5 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages (from pexpect; sys_platform != "win32"->ipython>=4.0.0->ipykernel)
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ sudo python -m ipykernel install --name gisenv --display-name "GISENV - Py3.4"
+/usr/bin/python: No module named ipykernel
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ sudo python3.4 -m ipykernel install --name gisenv --display-name "GISENV - Py3.4"
+sudo: python3.4: command not found
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ sudo python3 -m ipykernel install --name gisenv --display-name "GISENV - Py3.4"
+/usr/bin/python3: No module named ipykernel
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ source deactivate
+dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ pip install ipykernel
+Requirement already satisfied: ipykernel in /home/dhankar/anaconda2/lib/python2.7/site-packages
+dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ sudo python -m ipykernel install --name gisenv --display-name "GISENV - Py3.4"
+/usr/bin/python: No module named ipykernel
+dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
 
-During handling of the above exception, another exception occurred:
 
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/geopandas/__init__.py", line 1, in <module>
-    from geopandas.geoseries import GeoSeries
-  File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/geopandas/geoseries.py", line 5, in <module>
-    from pandas import Series
-  File "/home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/pandas/__init__.py", line 35, in <module>
-    "the C extensions first.".format(module))
-ImportError: C extension: No module named 'pandas._libs.tslib' not built. If you want to import pandas from the source directory, you may need to run 'python setup.py build_ext --inplace --force' to build the C extensions first.
->>> 
->>> 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ python -m  ipykernel install --prefix /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages
+[InstallIPythonKernelSpecApp] WARNING | Installing to /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/share/jupyter/kernels, which is not in ['/home/dhankar/.local/share/jupyter/kernels', '/home/dhankar/anaconda2/envs/gisenv/share/jupyter/kernels', '/usr/local/share/jupyter/kernels', '/usr/share/jupyter/kernels', '/home/dhankar/.ipython/kernels']. The kernelspec may not be found.
+Installed kernelspec python3 in /home/dhankar/anaconda2/envs/gisenv/lib/python3.4/site-packages/share/jupyter/kernels/python3
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ ./j_l.sh
+
+
+
+
+
+
+## Error -1 
+#
+
+
 
 
 
@@ -1114,4 +1220,5 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> 
 (gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
 (gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop/Geo_1$ 
+
 
